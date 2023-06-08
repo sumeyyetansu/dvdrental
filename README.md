@@ -1,5 +1,6 @@
 # dvdrental
-ÖDEV 1
+#ÖDEV 1
+
 1-) film tablosunda bulunan title ve description sütunlarındaki verileri sıralayınız.
 
 SELECT title, description FROM film;
@@ -26,7 +27,8 @@ SELECT * FROM film
 WHERE length <= 50 
 AND NOT (rental_rate = 2.99 OR rental_rate = 4.99);
 
-ÖDEV 2
+#ÖDEV 2
+
 --film tablosunda bulunan tüm sütunlardaki verileri replacement cost değeri 12.99 dan büyük eşit ve 16.99 küçük olma koşuluyla sıralayınız ( BETWEEN - AND yapısını kullanınız.)
 
 SELECT * FROM film WHERE replacement_cost BETWEEN 12.99 AND 16.98; 
@@ -39,7 +41,8 @@ SELECT first_name,last_name FROM actor WHERE first_name IN ('Penelope', 'Nick','
 
 SELECT * FROM film WHERE rental_rate IN ('0.99','2.99','4.99') AND replacement_cost IN ('12.99','15.99','28.99'); 
 
-ÖDEV 3
+#ÖDEV 3
+
 1)country tablosunda bulunan country sütunundaki ülke isimlerinden 'A' karakteri ile başlayıp 'a' karakteri ile sonlananları sıralayınız.
 
 SELECT country FROM country
@@ -59,7 +62,8 @@ WHERE title ILIKE '%T%T%T%T';
 SELECT * FROM film
 WHERE title LIKE 'C%'AND length > 90 AND rental_rate = 2.99;
 
-ÖDEV 4
+#ÖDEV 4
+
 --1)film tablosunda bulunan replacement_cost sütununda bulunan birbirinden farklı değerleri sıralayınız.
 
 SELECT DISTINCT replacement_cost FROM film;
@@ -82,3 +86,27 @@ WHERE country LIKE '_____';
 
 SELECT COUNT(city) FROM city
 WHERE city LIKE 'R%r';
+
+
+#ödev 5
+
+--1)film tablosunda bulunan ve film ismi (title) 'n' karakteri ile biten en uzun (length) 5 filmi sıralayınız.
+
+SELECT title FROM film
+WHERE title LIKE '%n'
+ORDER BY length 
+LIMIT 5;
+
+--2)film tablosunda bulunan ve film ismi (title) 'n' karakteri ile biten en kısa (length) ikinci(6,7,8,9,10) 5 filmi(6,7,8,9,10) sıralayınız.
+
+SELECT * FROM film
+WHERE title ILIKE '%N'
+ORDER BY length DESC
+OFFSET 5LIMIT 5
+
+--3)customer tablosunda bulunan last_name sütununa göre azalan yapılan sıralamada store_id 1 olmak koşuluyla ilk 4 veriyi sıralayınız.
+
+SELECT * FROM customer
+WHERE store_id = '1'
+ORDER BY last_name DESC
+LIMIT 4;
