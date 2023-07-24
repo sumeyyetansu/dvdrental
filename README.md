@@ -29,15 +29,15 @@ AND NOT (rental_rate = 2.99 OR rental_rate = 4.99);
 
 #ÖDEV 2
 
---film tablosunda bulunan tüm sütunlardaki verileri replacement cost değeri 12.99 dan büyük eşit ve 16.99 küçük olma koşuluyla sıralayınız ( BETWEEN - AND yapısını kullanınız.)
+1-)film tablosunda bulunan tüm sütunlardaki verileri replacement cost değeri 12.99 dan büyük eşit ve 16.99 küçük olma koşuluyla sıralayınız ( BETWEEN - AND yapısını kullanınız.)
 
 SELECT * FROM film WHERE replacement_cost BETWEEN 12.99 AND 16.98; 
 
---actor tablosunda bulunan first_name ve last_name sütunlardaki verileri first_name 'Penelope' veya 'Nick' veya 'Ed' değerleri olması koşuluyla sıralayınız. ( IN operatörünü kullanınız.)
+2-)actor tablosunda bulunan first_name ve last_name sütunlardaki verileri first_name 'Penelope' veya 'Nick' veya 'Ed' değerleri olması koşuluyla sıralayınız. ( IN operatörünü kullanınız.)
 
 SELECT first_name,last_name FROM actor WHERE first_name IN ('Penelope', 'Nick','Ed') ;
 
---film tablosunda bulunan tüm sütunlardaki verileri rental_rate 0.99, 2.99, 4.99 VE replacement_cost 12.99, 15.99, 28.99 olma koşullarıyla sıralayınız. ( IN operatörünü kullanınız.)
+3-)film tablosunda bulunan tüm sütunlardaki verileri rental_rate 0.99, 2.99, 4.99 VE replacement_cost 12.99, 15.99, 28.99 olma koşullarıyla sıralayınız. ( IN operatörünü kullanınız.)
 
 SELECT * FROM film WHERE rental_rate IN ('0.99','2.99','4.99') AND replacement_cost IN ('12.99','15.99','28.99'); 
 
@@ -64,25 +64,25 @@ WHERE title LIKE 'C%'AND length > 90 AND rental_rate = 2.99;
 
 #ÖDEV 4
 
---1)film tablosunda bulunan replacement_cost sütununda bulunan birbirinden farklı değerleri sıralayınız.
+1)film tablosunda bulunan replacement_cost sütununda bulunan birbirinden farklı değerleri sıralayınız.
 
 SELECT DISTINCT replacement_cost FROM film;
 
---2)film tablosunda bulunan replacement_cost sütununda birbirinden farklı kaç tane veri vardır?
+2)film tablosunda bulunan replacement_cost sütununda birbirinden farklı kaç tane veri vardır?
 
 SELECT COUNT(DISTINCT replacement_cost) FROM film;
 
---3)film tablosunda bulunan film isimlerinde (title) kaç tanesini T karakteri ile başlar ve aynı zamanda rating 'G' ye eşittir?
+3)film tablosunda bulunan film isimlerinde (title) kaç tanesini T karakteri ile başlar ve aynı zamanda rating 'G' ye eşittir?
 
 SELECT COUNT(*) FROM film 
 WHERE title LIKE 'T%' AND rating = 'G';
 
---4)country tablosunda bulunan ülke isimlerinden (country) kaç tanesi 5 karakterden oluşmaktadır?
+4)country tablosunda bulunan ülke isimlerinden (country) kaç tanesi 5 karakterden oluşmaktadır?
 
 SELECT COUNT(country) FROM country
 WHERE country LIKE '_____';
 
---5)city tablosundaki şehir isimlerinin kaç tanesi 'R' veya r karakteri ile biter?
+5)city tablosundaki şehir isimlerinin kaç tanesi 'R' veya r karakteri ile biter?
 
 SELECT COUNT(city) FROM city
 WHERE city LIKE 'R%r';
@@ -97,14 +97,14 @@ WHERE title LIKE '%n'
 ORDER BY length DESC
 LIMIT 5;
 
---2)film tablosunda bulunan ve film ismi (title) 'n' karakteri ile biten en kısa (length) ikinci(6,7,8,9,10) 5 filmi(6,7,8,9,10) sıralayınız.
+2)film tablosunda bulunan ve film ismi (title) 'n' karakteri ile biten en kısa (length) ikinci(6,7,8,9,10) 5 filmi(6,7,8,9,10) sıralayınız.
 
 SELECT * FROM film
 WHERE title ILIKE '%N'
 ORDER BY length ASC
 OFFSET 5LIMIT 5
 
---3)customer tablosunda bulunan last_name sütununa göre azalan yapılan sıralamada store_id 1 olmak koşuluyla ilk 4 veriyi sıralayınız.
+3)customer tablosunda bulunan last_name sütununa göre azalan yapılan sıralamada store_id 1 olmak koşuluyla ilk 4 veriyi sıralayınız.
 
 SELECT * FROM customer
 WHERE store_id = '1'
@@ -113,19 +113,43 @@ LIMIT 4;
 
 #ÖDEV 6
 
---1)film tablosunda bulunan rental_rate sütunundaki değerlerin ortalaması nedir?
+1)film tablosunda bulunan rental_rate sütunundaki değerlerin ortalaması nedir?
 
 SELECT AVG(rental_rate) FROM film;
 
---2)film tablosunda bulunan filmlerden kaç tanesi 'C' karakteri ile başlar?
+2)film tablosunda bulunan filmlerden kaç tanesi 'C' karakteri ile başlar?
 
-SELECT COUNT(*) FROM film WHERE title LIKE 'C%';
+SELECT COUNT(*) FROM film 
+WHERE title LIKE 'C%';
 
---3)film tablosunda bulunan filmlerden rental_rate değeri 0.99 a eşit olan en uzun (length) film kaç dakikadır?
+3)film tablosunda bulunan filmlerden rental_rate değeri 0.99 a eşit olan en uzun (length) film kaç dakikadır?
 
-SELECT MAX(length) FROM film WHERE rental_rate = 0.99;
+SELECT MAX(length) FROM film 
+WHERE rental_rate = 0.99;
 
---4)film tablosunda bulunan filmlerin uzunluğu 150 dakikadan büyük olanlarına ait kaç farklı replacement_cost değeri vardır?
+4)film tablosunda bulunan filmlerin uzunluğu 150 dakikadan büyük olanlarına ait kaç farklı replacement_cost değeri vardır?
 
 SELECT COUNT(DISTINCT(replacement_cost))  FROM film 
 WHERE length > 150 ;
+
+#ÖDEV 7
+Aşağıdaki sorgu senaryolarını dvdrental örnek veri tabanı üzerinden gerçekleştiriniz.
+
+1.film tablosunda bulunan filmleri rating değerlerine göre gruplayınız.
+SELECT rating FROM film
+GROUP BY rating ;
+
+2.film tablosunda bulunan filmleri replacement_cost sütununa göre grupladığımızda film sayısı 50 den fazla olan replacement_cost değerini ve karşılık gelen film sayısını sıralayınız.
+SELECT replacement_cost , COUNT (*) FROM film
+GROUP BY replacement_cost 
+HAVING COUNT (*) > 50;
+
+3. customer tablosunda bulunan store_id değerlerine karşılık gelen müşteri sayılarını nelerdir? 
+SELECT store_id , COUNT(*) FROM customer
+GROUP BY store_id ;
+
+4. city tablosunda bulunan şehir verilerini country_id sütununa göre gruplandırdıktan sonra en fazla şehir sayısı barındıran country_id bilgisini ve şehir sayısını paylaşınız.
+SELECT country_id,COUNT(*) FROM city
+GROUP BY country_id 
+ORDER BY COUNT(*) DESC
+LIMIT 1;
