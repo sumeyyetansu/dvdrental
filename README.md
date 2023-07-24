@@ -153,3 +153,104 @@ SELECT country_id,COUNT(*) FROM city
 GROUP BY country_id 
 ORDER BY COUNT(*) DESC
 LIMIT 1;
+
+#ÖDEV 8
+1)test veritabanınızda employee isimli sütun bilgileri id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100) olan bir tablo oluşturalım.
+CREATE TABLE employer(
+	--id INTEGER,
+	--name VARCHAR(50),
+	--birthday DATE,
+	--email VARCHAR(50));
+
+2)Oluşturduğumuz employee tablosuna 'Mockaroo' servisini kullanarak 50 adet veri ekleyelim.
+insert into employer (id, name, birthday, email) values (1, 'Gretna', '1980-08-04', 'gbywater0@jiathis.com');
+insert into employer (id, name, birthday, email) values (2, 'Haroun', '1987-03-13', 'hhubbucks1@woothemes.com');
+insert into employer (id, name, birthday, email) values (3, 'Randolph', '1987-11-14', 'rbearman2@google.it');
+insert into employer (id, name, birthday, email) values (4, 'Stafani', '1981-12-19', 'sstapley3@t-online.de');
+insert into employer (id, name, birthday, email) values (5, 'Janna', '1990-01-21', 'jolliver4@prnewswire.com');
+insert into employer (id, name, birthday, email) values (6, 'Red', '1986-02-18', 'rrottenbury5@nbcnews.com');
+insert into employer (id, name, birthday, email) values (7, 'Katinka', '1996-07-22', 'ktsarovic6@live.com');
+insert into employer (id, name, birthday, email) values (8, 'Amye', '1987-11-10', 'abrewins7@xinhuanet.com');
+insert into employer (id, name, birthday, email) values (9, 'Fey', '1996-05-28', 'fgisby8@usnews.com');
+insert into employer (id, name, birthday, email) values (10, 'Marci', '1982-03-26', 'mpinkney9@aboutads.info');
+insert into employer (id, name, birthday, email) values (11, 'Kimbell', '1997-07-28', 'klooka@salon.com');
+insert into employer (id, name, birthday, email) values (12, 'Carlie', '1986-05-24', 'cpoutressb@wikimedia.org');
+insert into employer (id, name, birthday, email) values (13, 'Becka', '1999-04-11', 'bfenbyc@oaic.gov.au');
+insert into employer (id, name, birthday, email) values (14, 'Gerladina', '1990-10-01', 'grosendalld@theglobeandmail.com');
+insert into employer (id, name, birthday, email) values (15, 'Ev', '1989-11-06', 'emalsere@usatoday.com');
+insert into employer (id, name, birthday, email) values (16, 'Dot', '1986-07-05', 'dradagef@hexun.com');
+insert into employer (id, name, birthday, email) values (17, 'Helen', '1997-08-02', 'hhaddowg@cornell.edu');
+insert into employer (id, name, birthday, email) values (18, 'Leila', '1997-04-27', 'lkinvigh@e-recht24.de');
+insert into employer (id, name, birthday, email) values (19, 'Holly', '1996-07-15', 'hklimentyonoki@google.es');
+insert into employer (id, name, birthday, email) values (20, 'Palm', '1987-05-24', 'pmacdearmontj@deliciousdays.com');
+insert into employer (id, name, birthday, email) values (21, 'Ag', '1984-08-22', 'areecek@nasa.gov');
+insert into employer (id, name, birthday, email) values (22, 'Hogan', '1986-04-06', 'hcallaghanl@devhub.com');
+insert into employer (id, name, birthday, email) values (23, 'Jarrid', '1987-04-03', 'jnesbym@imageshack.us');
+insert into employer (id, name, birthday, email) values (24, 'Packston', '1995-11-04', 'pkenlinn@miibeian.gov.cn');
+insert into employer (id, name, birthday, email) values (25, 'Solomon', '1985-03-25', 'swetherso@wisc.edu');
+insert into employer (id, name, birthday, email) values (26, 'Mile', '1987-03-23', 'mgrinaughp@tinypic.com');
+insert into employer (id, name, birthday, email) values (27, 'Bendite', '1990-06-01', 'bgodarq@webeden.co.uk');
+insert into employer (id, name, birthday, email) values (28, 'Alvera', '1991-08-09', 'asimoncellir@bing.com');
+insert into employer (id, name, birthday, email) values (29, 'Brana', '1987-03-21', 'btungays@multiply.com');
+insert into employer (id, name, birthday, email) values (30, 'Simona', '1980-09-30', 'sdachst@trellian.com');
+insert into employer (id, name, birthday, email) values (31, 'Camila', '1999-03-18', 'cbrittoneru@angelfire.com');
+insert into employer (id, name, birthday, email) values (32, 'Oswell', '1994-10-25', 'ocorsarv@technorati.com');
+insert into employer (id, name, birthday, email) values (33, 'Leodora', '1985-11-14', 'lcharrierw@homestead.com');
+insert into employer (id, name, birthday, email) values (34, 'Carmen', '1988-06-04', 'craineyx@bluehost.com');
+insert into employer (id, name, birthday, email) values (35, 'Athena', '1983-02-27', 'ashally@businessinsider.com');
+insert into employer (id, name, birthday, email) values (36, 'Pren', '2000-05-16', 'pivanisovz@yale.edu');
+insert into employer (id, name, birthday, email) values (37, 'Angelina', '1995-04-18', 'atomaszewicz10@toplist.cz');
+insert into employer (id, name, birthday, email) values (38, 'Nikita', '1982-08-23', 'ntax11@gnu.org');
+insert into employer (id, name, birthday, email) values (39, 'Bevan', '1999-05-18', 'bpablo12@mysql.com');
+insert into employer (id, name, birthday, email) values (40, 'Alma', '1988-07-12', 'adaveren13@stanford.edu');
+insert into employer (id, name, birthday, email) values (41, 'Guinna', '1998-10-02', 'gzorer14@cafepress.com');
+insert into employer (id, name, birthday, email) values (42, 'Guillema', '1999-03-08', 'ggland15@boston.com');
+insert into employer (id, name, birthday, email) values (43, 'Evangeline', '1980-11-17', 'escotchbourouge16@squidoo.com');
+insert into employer (id, name, birthday, email) values (44, 'Colver', '1989-12-19', 'cdouse17@google.de');
+insert into employer (id, name, birthday, email) values (45, 'Reeba', '1989-06-30', 'rduchart18@ucoz.ru');
+insert into employer (id, name, birthday, email) values (46, 'Lynette', '1985-01-09', 'lredier19@wikipedia.org');
+insert into employer (id, name, birthday, email) values (47, 'Kaleb', '1993-07-25', 'kduxbury1a@webs.com');
+insert into employer (id, name, birthday, email) values (48, 'Conrad', '1987-08-10', 'ckenningham1b@unblog.fr');
+insert into employer (id, name, birthday, email) values (49, 'Aguie', '1985-09-11', 'abrittoner1c@nsw.gov.au');
+insert into employer (id, name, birthday, email) values (50, 'Derril', '1995-05-07', 'dmaslen1d@seesaa.net');
+
+3)Sütunların her birine göre diğer sütunları güncelleyecek 5 adet UPDATE işlemi yapalım.
+
+UPDATE employer
+SET name = 'Merve'
+WHERE id = 10;
+
+UPDATE employer
+SET	email = 'merve@gmaiil.com'
+WHERE id = 10;
+
+UPDATE employer
+SET name = 'Serdar Ortaç',
+	birthday = '01.01.1980',
+	email = 'serdar@gmail.com'
+WHERE id = 1;
+
+UPDATE employer
+SET birthday = '22.06.1993'
+WHERE id = 8 ;
+
+UPDATE employer
+SET name = 'Kıvanç'
+WHERE id = 20;
+
+4)Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım.
+DELETE from employer
+WHERE id = 15;
+
+DELETE from employer
+WHERE name = 'Fey';
+
+
+DELETE from employer
+WHERE name = 'Dot';
+
+DELETE from employer
+WHERE id = 50;
+
+DELETE from employer
+WHERE email = 'cdouse17@google.de';
