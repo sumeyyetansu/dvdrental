@@ -94,14 +94,14 @@ WHERE city LIKE 'R%r';
 
 SELECT title FROM film
 WHERE title LIKE '%n'
-ORDER BY length 
+ORDER BY length DESC
 LIMIT 5;
 
 --2)film tablosunda bulunan ve film ismi (title) 'n' karakteri ile biten en kısa (length) ikinci(6,7,8,9,10) 5 filmi(6,7,8,9,10) sıralayınız.
 
 SELECT * FROM film
 WHERE title ILIKE '%N'
-ORDER BY length DESC
+ORDER BY length ASC
 OFFSET 5LIMIT 5
 
 --3)customer tablosunda bulunan last_name sütununa göre azalan yapılan sıralamada store_id 1 olmak koşuluyla ilk 4 veriyi sıralayınız.
@@ -119,11 +119,11 @@ SELECT AVG(rental_rate) FROM film;
 
 --2)film tablosunda bulunan filmlerden kaç tanesi 'C' karakteri ile başlar?
 
-SELECT COUNT(*) FROM filmWHERE title LIKE 'C%';
+SELECT COUNT(*) FROM film WHERE title LIKE 'C%';
 
 --3)film tablosunda bulunan filmlerden rental_rate değeri 0.99 a eşit olan en uzun (length) film kaç dakikadır?
 
-SELECT MAX(length) FROM filmWHERE rental_rate = 0.99;
+SELECT MAX(length) FROM film WHERE rental_rate = 0.99;
 
 --4)film tablosunda bulunan filmlerin uzunluğu 150 dakikadan büyük olanlarına ait kaç farklı replacement_cost değeri vardır?
 
