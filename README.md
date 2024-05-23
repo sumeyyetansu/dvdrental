@@ -254,3 +254,17 @@ WHERE id = 50;
 
 DELETE from employer
 WHERE email = 'cdouse17@google.de';
+
+#ÖDEV 9
+Aşağıdaki sorgu senaryolarını dvdrental örnek veri tabanı üzerinden gerçekleştiriniz.
+
+city tablosu ile country tablosunda bulunan şehir (city) ve ülke (country) isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.
+
+SELECT <sütun_adı>, <sütun_adı> ...
+FROM city
+INNER JOIN country
+ON <city>.<sütun_adı> = <tablo2_adı>.<sütun_adı>;
+customer tablosu ile payment tablosunda bulunan payment_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.
+
+customer tablosu ile rental tablosunda bulunan rental_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.
+
